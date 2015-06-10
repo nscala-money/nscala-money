@@ -13,7 +13,7 @@ Joda Time.
 Add the following to your sbt build (Scala 2.9.3, Scala 2.10.x, and Scala 2.11.x):
 
 ```scala
-libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.9.0"
+libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.9.1"
 ```
 
 If you want to use previous versions, you can find them [here](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.nscala-money%22).
