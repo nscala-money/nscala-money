@@ -16,19 +16,9 @@
  */
 package com.github.nscala_money.money
 
-object Imports extends Imports
-object TypeImports extends TypeImports
-object StaticForwarderImports extends StaticForwarderImports
+import com.github.nscala_money.EnrichedType
+import org.joda.money._
 
-trait Imports extends TypeImports with StaticForwarderImports with Implicits
-
-trait TypeImports {
-  type Money = org.joda.money.Money
-  type BigMoney = org.joda.money.BigMoney
-  type BigMoneyProvider = org.joda.money.BigMoneyProvider
-}
-
-trait StaticForwarderImports {
-  val Money = com.github.nscala_money.money.StaticMoney
-  val BigMoney = com.github.nscala_money.money.StaticBigMoney
+class RichBigMoneyProvider(val underlying: BigMoneyProvider) extends Super with EnrichedType[BigMoneyProvider] {
+  def bigMoney: BigMoney = underlying.toBigMoney
 }
