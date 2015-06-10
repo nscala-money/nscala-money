@@ -21,7 +21,18 @@ import org.joda.money._
 object Implicits extends Implicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends JodaImplicits
+trait Implicits extends JodaImplicits with NumericImplicits with StringImplicits
+
+trait NumericImplicits {
+  implicit def richInt(n: Int): RichInt = new com.github.nscala_money.money.RichInt(n)
+  implicit def richDouble(d: Double): RichDouble = new com.github.nscala_money.money.RichDouble(d)
+
+  implicit def richBigDecimal(bd: BigDecimal): RichBigDecimal = new RichBigDecimal(bd)
+}
+
+trait StringImplicits {
+  implicit def richString(s: String): RichString = new com.github.nscala_money.money.RichString(s)
+}
 
 trait JodaImplicits {
   implicit def richMoney(m: Money): RichMoney = new RichMoney(m)

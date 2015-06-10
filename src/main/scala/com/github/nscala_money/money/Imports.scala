@@ -27,6 +27,8 @@ trait TypeImports {
   type BigMoney = org.joda.money.BigMoney
   type BigMoneyProvider = org.joda.money.BigMoneyProvider
   type CurrencyUnit = org.joda.money.CurrencyUnit
+
+  type IllegalCurrencyException = org.joda.money.IllegalCurrencyException
 }
 
 trait StaticForwarderImports {
