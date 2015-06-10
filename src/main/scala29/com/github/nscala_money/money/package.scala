@@ -18,4 +18,5 @@ package com.github.nscala_money
 
 package object money {
   private[money] type Super = AnyRef
+  private[money] type Universal = Object
 }
