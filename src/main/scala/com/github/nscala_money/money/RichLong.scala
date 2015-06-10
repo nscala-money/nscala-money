@@ -19,13 +19,7 @@ package com.github.nscala_money.money
 import com.github.nscala_money.EnrichedType
 import com.github.nscala_money.money.Imports._
 
-import scala.math.BigDecimal.RoundingMode.RoundingMode
-
-class RichBigDecimal(val underlying: BigDecimal) extends Super with EnrichedType[BigDecimal] {
-  def toMoney(currency: CurrencyUnit): Money = Money.of(currency, underlying)
-  def toMoney(currency: CurrencyUnit, mode: RoundingMode) = Money.of(currency, underlying, mode)
-
-  def toBigMoney(currency: CurrencyUnit): BigMoney = BigMoney.of(currency, underlying)
-
+class RichLong(val underlying: Long) extends Super with EnrichedType[Long] {
+  def *(money: Money): Money = money * underlying
   def *(money: BigMoney): BigMoney = money * underlying
 }

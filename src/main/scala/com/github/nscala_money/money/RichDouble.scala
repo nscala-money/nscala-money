@@ -21,4 +21,6 @@ import com.github.nscala_money.money.Imports._
 
 class RichDouble(val underlying: Double) extends Super with EnrichedType[Double] {
   def toBigMoney(currency: CurrencyUnit): BigMoney = BigMoney.of(currency, underlying)
+
+  def *(money: BigMoney): BigMoney = money * underlying
 }

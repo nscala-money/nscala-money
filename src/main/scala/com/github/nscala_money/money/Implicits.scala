@@ -25,6 +25,7 @@ trait Implicits extends JodaImplicits with NumericImplicits with StringImplicits
 
 trait NumericImplicits {
   implicit def richInt(n: Int): RichInt = new com.github.nscala_money.money.RichInt(n)
+  implicit def richLong(n: Long): RichLong = new com.github.nscala_money.money.RichLong(n)
   implicit def richDouble(d: Double): RichDouble = new com.github.nscala_money.money.RichDouble(d)
 
   implicit def richBigDecimal(bd: BigDecimal): RichBigDecimal = new RichBigDecimal(bd)
