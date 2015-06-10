@@ -26,9 +26,11 @@ trait TypeImports {
   type Money = org.joda.money.Money
   type BigMoney = org.joda.money.BigMoney
   type BigMoneyProvider = org.joda.money.BigMoneyProvider
+  type CurrencyUnit = org.joda.money.CurrencyUnit
 }
 
 trait StaticForwarderImports {
   val Money = com.github.nscala_money.money.StaticMoney
   val BigMoney = com.github.nscala_money.money.StaticBigMoney
+  val CurrencyUnit = com.github.nscala_money.money.StaticCurrencyUnit
 }

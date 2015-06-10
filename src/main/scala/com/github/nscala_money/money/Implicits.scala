@@ -27,4 +27,5 @@ trait JodaImplicits {
   implicit def richMoney(m: Money): RichMoney = new RichMoney(m)
   implicit def richBigMoney(bm: BigMoney): RichBigMoney = new RichBigMoney(bm)
   implicit def richBigMoneyProvider(bmp: BigMoneyProvider): RichBigMoneyProvider = new RichBigMoneyProvider(bmp)
+  implicit def richCurrencyUnit(cu: CurrencyUnit): RichCurrencyUnit = new RichCurrencyUnit(cu)
 }
