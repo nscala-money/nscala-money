@@ -1,4 +1,3 @@
-
 organization := "com.github.nscala-money"
 
 sonatypeProfileName := "com.github.nscala-money"
@@ -87,10 +86,12 @@ pomExtra := (
   </developers>
 )
 
-credentials += {
+credentials ++= {
   val realm    = "Sonatype Nexus Repository Manager"
   val host     = "oss.sonatype.org"
-  val username = sys.env("NEXUS_USERNAME")
-  val password = sys.env("NEXUS_PASSWORD")
-  Credentials(realm, host, username, password)
+  val cred = for {
+    username <- scala.util.Try(sys.env("NEXUS_USERNAME")).toOption
+    password <- scala.util.Try(sys.env("NEXUS_PASSWORD")).toOption
+  } yield Credentials(realm, host, username, password)
+  cred.toList
 }
