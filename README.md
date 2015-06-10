@@ -1,4 +1,7 @@
 # nscala-money
+[![Build Status](https://travis-ci.org/nscala-money/nscala-money.svg?branch=master)](https://travis-ci.org/nscala-money/nscala-money)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nscala-money/nscala-money_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nscala-money/nscala-money_2.11)
+[![Scaladoc](http://javadoc-badge.appspot.com/com.github.nscala-money/nscala-money_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.github.nscala-money/nscala-money_2.11)
 
 A Scala wrapper for [Joda Money](http://www.joda.org/joda-money/), in
 the same vein as the
