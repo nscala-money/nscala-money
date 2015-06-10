@@ -46,4 +46,7 @@ trait StaticBigMoney extends Conversions {
   def total(monies: Iterable[BigMoneyProvider]): BigMoney = BigMoney.total(monies.asJava)
   def total(currency: CurrencyUnit, monies: BigMoneyProvider*): BigMoney = BigMoney.total(currency, monies: _*)
   def total(currency: CurrencyUnit, monies: Iterable[BigMoneyProvider]): BigMoney = BigMoney.total(currency, monies.asJava)
+
+  def min(money1: BigMoney, money2: BigMoney): BigMoney = MoneyUtils.min(money1, money2)
+  def max(money1: BigMoney, money2: BigMoney): BigMoney = MoneyUtils.max(money1, money2)
 }
