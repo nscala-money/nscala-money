@@ -10,7 +10,7 @@ Joda Time.
 
 ## Installation
 
-Add the following to your sbt build (Scala 2.9.3, Scala 2.10.x, and Scala 2.11.x):
+Add the following to your sbt build (Scala 2.10.x, and Scala 2.11.x):
 
 ```scala
 libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.9.1"
