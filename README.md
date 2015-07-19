@@ -6,14 +6,25 @@
 A Scala wrapper for [Joda Money](http://www.joda.org/joda-money/), in
 the same vein as the
 [nscala-time](https://github.com/nscala-time/nscala-time) wrapper for
-Joda Time.
+Joda Time. An optional helper for Play JSON is available.
+
+| Name | Description | Scaladoc |
+|------|-------------|----------|
+|`nscala-money`|Pure Scala Wrapper|[API](https://maven-badges.herokuapp.com/maven-central/com.github.nscala-money/nscala-money_2.11)|
+|`nscala-money-play-json`|Play JSON `Reads/Writes`|[API](https://maven-badges.herokuapp.com/maven-central/com.github.nscala-money/nscala-money-play-json_2.11/)|
 
 ## Installation
 
-Add the following to your sbt build (Scala 2.9.3, Scala 2.10.x, and Scala 2.11.x):
+Add the following to your sbt build (Scala 2.10.x, and Scala 2.11.x):
 
 ```scala
 libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.9.1"
+```
+
+To support reading and writing JodaMoney objects using Play JSON, also add (Scala 2.10.x and Scala 2.11.x):
+
+```scala
+libraryDependencies += "com.github.nscala-money" %% "nscala-money-play-json" % "0.9.1"
 ```
 
 If you want to use previous versions, you can find them [here](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.nscala-money%22).
@@ -22,9 +33,16 @@ If you want to use previous versions, you can find them [here](https://search.ma
 
 This is mostly a convenience wrapper around the Joda Money libraries, adding more pleasant syntax like operators for addition, subtraction, and comparison. Also, most fields usually available as `getField` are now simply available as `field`, following Scala convention.  Some instances of `asX` or `toX` have also been shortened.
 
+The `nscala-money-play-json` helper adds support for Play JSON.
+Various `Reads` and `Writes` for `CurrencyUnit`, `Money`, and
+`BigMoney` are provided.
+
 ### Import
 ```scala
 import com.github.nscala_money.money.Imports._
+
+// For optional Play JSON support
+import com.github.nscala_money.money.json.PlayImports._
 ```
 
 ### Money Operations
