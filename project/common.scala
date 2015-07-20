@@ -1,6 +1,10 @@
 import sbt._
 import Keys._
 
+import de.heikoseeberger.sbtheader.AutomateHeaderPlugin
+import de.heikoseeberger.sbtheader.HeaderPlugin.autoImport._
+import de.heikoseeberger.sbtheader.license.Apache2_0
+
 import Dependencies.commonDependencies
 
 object Common {
@@ -19,10 +23,13 @@ object Common {
     scalacOptions in (Test, console)    := (scalacOptions in (Compile, console)).value,
 
     // release options
-    organization   := "com.github.nscala-money",
-    pomExtra       := pomExtraVal,
-    pomPostProcess := pomPostProcessVal,
-    credentials ++= credentialsVal,
+    organization    := "com.github.nscala-money",
+    pomExtra        := pomExtraVal,
+    pomPostProcess  := pomPostProcessVal,
+    credentials    ++= credentialsVal,
+
+    // keep headers updated
+    headers         := headersVal,
 
     // dependencies
     libraryDependencies ++= commonDependencies
@@ -33,6 +40,7 @@ object Common {
   def MoneyProject(name: String, file: File): Project = (
     Project(name, file)
     settings(commonSettings:_*)
+    enablePlugins(AutomateHeaderPlugin)
   )
 
   def minorVersion(version: String): Int = CrossVersion.partialVersion(version).get._2
@@ -95,5 +103,9 @@ object Common {
     } yield Credentials(realm, host, username, password)
     cred.toList
   }
+
+  val headersVal = Map(
+    "scala" -> Apache2_0("2015", "David R. Bild", "*")
+  )
 
 }
