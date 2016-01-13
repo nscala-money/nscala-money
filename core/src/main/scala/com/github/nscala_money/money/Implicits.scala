@@ -21,9 +21,10 @@ import org.joda.money._
 object Implicits extends Implicits
 object NumericImplicits extends NumericImplicits
 object StringImplicits extends StringImplicits
+object OrderingImplicits extends OrderingImplicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends NumericImplicits with StringImplicits with JodaImplicits
+trait Implicits extends NumericImplicits with StringImplicits with OrderingImplicits with JodaImplicits
 
 trait NumericImplicits {
   implicit def richInt(n: Int): RichInt = new com.github.nscala_money.money.RichInt(n)
@@ -35,6 +36,14 @@ trait NumericImplicits {
 
 trait StringImplicits {
   implicit def richString(s: String): RichString = new com.github.nscala_money.money.RichString(s)
+}
+
+trait OrderingImplicits {
+  implicit def BigMoneyOrdering: Ordering[BigMoney] = order[BigMoney, BigMoneyProvider]
+  implicit def MoneyOrdering: Ordering[Money] = order[Money, BigMoneyProvider]
+  private def order[A <: Comparable[B], B](implicit ev: A <:< B): Ordering[A] = new Ordering[A] {
+    override def compare(x: A, y: A): Int = x compareTo y
+  }
 }
 
 trait JodaImplicits {
