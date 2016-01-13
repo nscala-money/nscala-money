@@ -19,9 +19,11 @@ package com.github.nscala_money.money
 import org.joda.money._
 
 object Implicits extends Implicits
+object NumericImplicits extends NumericImplicits
+object StringImplicits extends StringImplicits
 object JodaImplicits extends JodaImplicits
 
-trait Implicits extends JodaImplicits with NumericImplicits with StringImplicits
+trait Implicits extends NumericImplicits with StringImplicits with JodaImplicits
 
 trait NumericImplicits {
   implicit def richInt(n: Int): RichInt = new com.github.nscala_money.money.RichInt(n)
