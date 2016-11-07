@@ -4,9 +4,9 @@ import Keys._
 object Dependencies {
   // Versions
   object V {
-    val jodaMoney   = "0.10.0"
-    val jodaConvert = "1.2"
-    val play        = "2.4.2"
+    val jodaMoney   = "0.11"
+    val jodaConvert = "1.8"
+    val play        = "2.5.9"
     val scalacheck  = "1.11.6"
   }
 

@@ -21,3 +21,5 @@ matrix:
   exclude:
     - env: PROJECT=play-json
       jdk: oraclejdk7
+    - env: PROJECT=play-json
+      scala: "2.10.5"
