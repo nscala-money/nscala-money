@@ -84,7 +84,7 @@ as issues and pull requests on Github.
 + [https://github.com/drbild](https://github.com/drbild)
 
 ## License
-Copyright 2015 David R. Bild
+Copyright 2015-2016 David R. Bild
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this work except in compliance with the License. You may obtain a copy of the

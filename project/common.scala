@@ -105,7 +105,7 @@ object Common {
   }
 
   val headersVal = Map(
-    "scala" -> Apache2_0("2015", "David R. Bild", "*")
+    "scala" -> Apache2_0("2015-2016", "David R. Bild", "*")
   )
 
 }
