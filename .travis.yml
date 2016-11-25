@@ -1,7 +1,6 @@
 language: scala
 scala:
-  - "2.11.6"
-  - "2.10.5"
+  - "2.11.8"
 jdk:
   - oraclejdk8
   - oraclejdk7
@@ -19,7 +18,5 @@ script:
   - if [[ ${JAVA_HOME} == $(jdk_switcher home oraclejdk7) ]]; then rm -rf $HOME/.ivy2/cache ; fi
 matrix:
   exclude:
-    - env: PROJECT=play-json
-      jdk: oraclejdk7
-    - env: PROJECT=play-json
-      scala: "2.10.5"
+    - env:   PROJECT=play-json
+      jdk:   oraclejdk7

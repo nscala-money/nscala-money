@@ -9,8 +9,8 @@ import Dependencies.commonDependencies
 
 object Common {
   val commonSettings: Seq[Def.Setting[_]] = Seq(
-    scalaVersion := "2.11.6",
-    crossScalaVersions := Seq("2.10.5", "2.11.6"),
+    scalaVersion := "2.11.8",
+    crossScalaVersions := Seq("2.11.8"),
 
     initialCommands in console += "import com.github.nscala_money.money.Imports._\n",
 
