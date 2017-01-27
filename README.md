@@ -18,13 +18,13 @@ Joda Time. An optional helper for Play JSON is available.
 Add the following to your sbt build (Scala 2.10.x, and Scala 2.11.x):
 
 ```scala
-libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.12.1"
+libraryDependencies += "com.github.nscala-money" %% "nscala-money" % "0.12.2"
 ```
 
 To support reading and writing JodaMoney objects using Play JSON, also add (Scala 2.10.x and Scala 2.11.x):
 
 ```scala
-libraryDependencies += "com.github.nscala-money" %% "nscala-money-play-json" % "0.12.1"
+libraryDependencies += "com.github.nscala-money" %% "nscala-money-play-json" % "0.12.2"
 ```
 
 If you want to use previous versions, you can find them [here](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.nscala-money%22).
