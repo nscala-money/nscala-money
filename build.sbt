@@ -19,6 +19,7 @@ lazy val core = (
   MoneyProject("core")
   settings(
     name                                   := "nscala-money",
+    crossScalaVersions                     += "2.12.1",
     libraryDependencies                   ++= coreDependencies,
     unmanagedSourceDirectories in Compile ++= coreUnmanagedDirs(scalaVersion.value,
                                                                (sourceDirectory in Compile).value)
