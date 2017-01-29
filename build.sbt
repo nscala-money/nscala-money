@@ -11,6 +11,7 @@ lazy val nscalaMoney = (
     packagedArtifacts          := Map.empty, // don't publish the default aggregate root project
     initialCommands in console += "import com.github.nscala_money.money.json.PlayImports._\n"
   )
+  enablePlugins(CrossPerProjectPlugin)
   aggregate(core, playJson)
   dependsOn(core, playJson)
 )
