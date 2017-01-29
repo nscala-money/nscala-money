@@ -57,7 +57,7 @@ object UpdateReadmePlugin extends AutoPlugin {
       vcs.add(relative) !! log
       val status = (vcs.status.!!).trim
       if (status.nonEmpty) {
-        vcs.commit(message) ! log
+        vcs.commit(message, false) ! log
       }
     }
   )
