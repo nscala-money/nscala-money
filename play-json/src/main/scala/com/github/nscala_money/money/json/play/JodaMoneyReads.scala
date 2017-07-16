@@ -17,14 +17,13 @@
 package com.github.nscala_money.money.json.play
 
 import com.github.nscala_money.money.Imports._
-import play.api.data.validation.ValidationError
 import play.api.libs.functional.syntax._
 import play.api.libs.json._
 
 object JodaMoneyReads extends JodaMoneyReads
 
 trait JodaMoneyReads {
-  private def error(message: String, args: Any*) = JsError(Seq(JsPath() -> Seq(ValidationError(message, args: _*))))
+  private def error(message: String, args: Any*) = JsError(Seq(JsPath() -> Seq(JsonValidationError(message, args: _*))))
   private def safe[R](f: => R): Option[R] = scala.util.control.Exception.allCatch opt (f)
 
   // ======================================= CurrencyUnit Reads =======================================

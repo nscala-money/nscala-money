@@ -20,7 +20,7 @@ lazy val core = (
   MoneyProject("core")
   settings(
     name                                   := "nscala-money",
-    crossScalaVersions                     += "2.12.1",
+    crossScalaVersions                     += "2.12.2",
     libraryDependencies                   ++= coreDependencies,
     unmanagedSourceDirectories in Compile ++= coreUnmanagedDirs(scalaVersion.value,
                                                                (sourceDirectory in Compile).value)
@@ -31,6 +31,7 @@ lazy val playJson = (
   MoneyProject("play-json")
   settings(
     name                        := "nscala-money-play-json",
+    crossScalaVersions          += "2.12.2",
     libraryDependencies        ++= playJsonDependencies,
     initialCommands in console  += "import com.github.nscala_money.money.json.PlayImports._\n"
   )
