@@ -6,7 +6,7 @@ object Dependencies {
   object V {
     val jodaMoney   = "0.12"
     val jodaConvert = "1.8"
-    val play        = "2.5.9"
+    val play        = "2.6.2"
     val scalacheck  = "1.11.6"
   }
 
