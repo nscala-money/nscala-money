@@ -1,7 +1,7 @@
 language: scala
 scala:
   - "2.11.8"
-  - "2.12.1"
+  - "2.12.2"
 jdk:
   - oraclejdk8
   - oraclejdk7
@@ -21,7 +21,5 @@ matrix:
   exclude:
     - env:   PROJECT=play-json
       jdk:   oraclejdk7
-    - env:   PROJECT=play-json
-      scala: "2.12.1"
-    - scala: "2.12.1"
+    - scala: "2.12.2"
       jdk:   oraclejdk7
