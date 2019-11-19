@@ -3,8 +3,8 @@ scala:
   - "2.11.8"
   - "2.12.2"
 jdk:
-  - oraclejdk8
-  - oraclejdk7
+  - openjdk8
+  - openjdk7
 env:
   - PROJECT=core
   - PROJECT=play-json
@@ -16,10 +16,10 @@ script:
   - sbt ++${TRAVIS_SCALA_VERSION} $PROJECT/test
   - find $HOME/.ivy2/cache -name "ivydata-*.properties" | xargs rm
   - find $HOME/.ivy2/cache -name "*SNAPSHOT*" | xargs rm -rf
-  - if [[ ${JAVA_HOME} == $(jdk_switcher home oraclejdk7) ]]; then rm -rf $HOME/.ivy2/cache ; fi
+  - if [[ ${JAVA_HOME} == $(jdk_switcher home openjdk7) ]]; then rm -rf $HOME/.ivy2/cache ; fi
 matrix:
   exclude:
     - env:   PROJECT=play-json
-      jdk:   oraclejdk7
+      jdk:   openjdk7
     - scala: "2.12.2"
-      jdk:   oraclejdk7
+      jdk:   openjdk7
