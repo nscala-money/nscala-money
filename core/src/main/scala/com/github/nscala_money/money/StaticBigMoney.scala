@@ -25,8 +25,6 @@ object StaticBigMoney extends StaticBigMoney
 
 trait StaticBigMoney extends Conversions {
 
-  def nonNull(currency: CurrencyUnit, money: BigMoney): BigMoney = BigMoney.nonNull(money, currency)
-
   def zero(currency: CurrencyUnit): BigMoney = BigMoney.zero(currency)
   def zero(currency: CurrencyUnit, scale: Int): BigMoney = BigMoney.zero(currency, scale)
   def parse(str: String): BigMoney = BigMoney.parse(str)

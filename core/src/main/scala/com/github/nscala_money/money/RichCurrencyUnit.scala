@@ -27,9 +27,8 @@ class RichCurrencyUnit(val underlying: CurrencyUnit) extends Super with Enriched
 
   def code: String = underlying.getCode
   def countryCodes: Set[String] = underlying.getCountryCodes.asScala.toSet
-  def currencyCode: String = underlying.getCurrencyCode
+  def currencyCode: String = underlying.getCode
   def decimalPlaces: Int = underlying.getDecimalPlaces
-  def defaultFractionDigits: Int = underlying.getDefaultFractionDigits
   def numericCode: Int = underlying.getNumericCode
   def numericCodeString: String = underlying.getNumeric3Code
   def symbol: String = underlying.getSymbol
